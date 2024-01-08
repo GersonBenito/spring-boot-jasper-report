@@ -164,7 +164,7 @@
                 <textFieldExpression><![CDATA[$P{ELECTRONIC_SIGNATURE_NAME}]]></textFieldExpression>
             </textField>
             <image vAlign="Middle">
-                <reportElement x="290" y="190" width="218" height="120" uuid="53e843da-2caa-4e69-b908-cfe692bbac4b"/>
+                <reportElement x="310" y="190" width="199" height="87" uuid="53e843da-2caa-4e69-b908-cfe692bbac4b"/>
                 <imageExpression><![CDATA[$P{IMAGE_DIR} + "signature.png"]]></imageExpression>
             </image>
         </band>
