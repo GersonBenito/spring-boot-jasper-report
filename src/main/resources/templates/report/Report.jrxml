@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ExampleReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c55c4b7b-1656-499b-877f-9b4a90516be7">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <parameter name="VOUCHER_ID" class="java.lang.String">
+        <parameterDescription><![CDATA[Dynamic number voucher]]></parameterDescription>
+    </parameter>
+    <parameter name="CURRENT_DATE" class="java.lang.String"/>
+    <parameter name="CURRENT_HOUR" class="java.lang.String"/>
+    <parameter name="PAYMENT_VALUE" class="java.math.BigDecimal"/>
+    <parameter name="HALF_PAYMENT" class="java.lang.String"/>
+    <parameter name="GUARDIAN_NAME" class="java.lang.String"/>
+    <parameter name="STUDENT_NAME" class="java.lang.String"/>
+    <parameter name="ELECTRONIC_SIGNATURE_NAME" class="java.lang.String"/>
+    <parameter name="IMAGE_DIR" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="171" splitType="Stretch">
+            <staticText>
+                <reportElement x="30" y="20" width="510" height="50" uuid="ea1d072e-a2c8-480e-aee4-9e38a9b29986"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="26"/>
+                </textElement>
+                <text><![CDATA[¡Comprobante electrónico!]]></text>
+            </staticText>
+            <image>
+                <reportElement x="252" y="90" width="50" height="50" uuid="b3bd83b0-c9af-4419-af87-3e448c533e09"/>
+                <imageExpression><![CDATA[$P{IMAGE_DIR} + "check.png"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="91" splitType="Stretch">
+            <image hAlign="Center">
+                <reportElement x="30" y="10" width="80" height="70" uuid="1dde0027-a028-486f-ad41-0d13c58e332f"/>
+                <imageExpression><![CDATA[$P{IMAGE_DIR} + "ligthbulb.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="130" y="23" width="410" height="45" uuid="2f8f77e4-9bd4-4c67-924c-6919a7eec6ea"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Para cualquier reclamo referente a la contratacion del servicio debe presentar el debido comprobante de pago.]]></text>
+            </staticText>
+            <rectangle>
+                <reportElement mode="Transparent" x="30" y="9" width="509" height="71" forecolor="#E6E6E6" backcolor="#FFFFFF" uuid="e43c878b-40f0-4f3f-ba07-0a6787d4efbb"/>
+            </rectangle>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="99" splitType="Stretch">
+            <staticText>
+                <reportElement x="148" y="20" width="132" height="30" uuid="90c6ebd4-5fbb-4dbd-9019-6366118fb64a"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Comprobante No.]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="280" y="20" width="258" height="30" uuid="df8358a8-feb4-4823-9bdd-2d9ab83bb09c"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{VOUCHER_ID}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="70" y="58" width="198" height="30" uuid="5df3a5be-3af6-4142-a13e-3672712433c8"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{CURRENT_DATE}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="290" y="58" width="199" height="30" uuid="d400ae86-adcb-4061-b4d9-99041352de97"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{CURRENT_HOUR}]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement mode="Transparent" x="29" y="10" width="508" height="89" forecolor="#E6E6E6" uuid="01453555-aa1c-43a7-823c-794f380a2f9b"/>
+            </rectangle>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="320" splitType="Stretch">
+            <staticText>
+                <reportElement x="48" y="40" width="112" height="30" uuid="1ece40c1-8299-499b-ba1a-264d156ddfb9"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Valor pagado:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="70" width="112" height="30" uuid="b1b7c1f2-732c-4e25-aebc-b2bbc2516405"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Medio de pago:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="100" width="170" height="30" uuid="479210bf-fef8-49cb-b6f0-06411c5e0e18"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Nombre del acudiente:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="130" width="170" height="30" uuid="da68a472-62c7-4348-9118-6e84e2d32258"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Nombre del alumno:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="230" y="40" width="219" height="30" uuid="8b5c5e1e-07ab-4a31-94e7-6505d128aba2"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA["$"+$P{PAYMENT_VALUE}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="230" y="70" width="219" height="30" uuid="1a78b70a-aac5-45d8-bf43-b88c482fb73a"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{HALF_PAYMENT}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="230" y="100" width="219" height="30" uuid="b3716ed5-12bf-4ee4-94f8-2afe758a81ad"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{GUARDIAN_NAME}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="230" y="130" width="219" height="30" uuid="ec3c217f-9652-493a-82b0-ebaec8d24bf6"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{STUDENT_NAME}]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement mode="Transparent" x="30" y="30" width="507" height="149" uuid="1b7118a5-da49-4cbf-a8e1-6e69136830ed"/>
+                <graphicElement>
+                    <pen lineStyle="Dashed" lineColor="#E6E6E6"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="330" y="270" width="208" height="19" uuid="6b9462b6-2efe-4b2e-8d5e-b6010caaa5d3"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[____________________________]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="331" y="290" width="206" height="30" uuid="7ac08d19-5420-47ac-a6a5-28cf44923f77"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{ELECTRONIC_SIGNATURE_NAME}]]></textFieldExpression>
+            </textField>
+            <image vAlign="Middle">
+                <reportElement x="290" y="190" width="218" height="120" uuid="53e843da-2caa-4e69-b908-cfe692bbac4b"/>
+                <imageExpression><![CDATA[$P{IMAGE_DIR} + "signature.png"]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
